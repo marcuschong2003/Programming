@@ -295,7 +295,7 @@ def hello(*args)
   - ##### 句式：</br> Syntax:
 ```python
 def payment(principal,time,frequency,interest):
-    payment = principal/((1-(1+interest)**(time*frequency))/interest)
+    payment = principal/((1-(1+interest)**(-1*time*frequency))/interest)
     return payment
 ```
   - ##### 则可以运行 `payment(10000,10,3,0.05)` 或 `payment(principal=10000,time=10,frequence=3,interest=0.05)` 以作出相应算式</br> Then `payment(10000,10,3,0.05)` or `payment(principal=10000,time=10,frequence=3,interest=0.05)` could be ran to do the calculation
