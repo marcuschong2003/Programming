@@ -60,7 +60,23 @@
     - 语句 <br/> syntax: []
     - 用于储存多个数据在一个合集中 <br/> used to store a number of datas together like a collection
     - 编号由0开始<br/> index starts at 0
-    - 次序有别 <br/> The sequence of data matters
+    - 次序有别 <br/> The sequence of data matters 
+``` python
+lista = ["a","b","c"]
+lista[0] #"a"
+lista[1] #"b"
+listq = lista + ["x","y","z"]
+listq[4] #"y"
+```
+
+```python
+listq[5]= "q"
+listq #["a","b","c","x","y","q"]
+listq.pop()
+listq #["a","b","c","x","y"]
+listq.pop(2)
+listq #["a","b","x","y"]
+```
   - ###### 词典 <br/> Dictionaries
     - 语句 <br/> syntax: `name = {"key":"value"}`
     - 数据以键值对的形式储存 <br/> The datas are stored in key-value pair
@@ -237,4 +253,72 @@ for x in range(7):
 4
 5
 6
+```
+---
+
+## 函数 </br> Function
+- #### 函数是一组代码，可以提出输入参数或不提取，然后执行其内涵的代码 </br> Function is a block of code, taking or not taking in any arguments, then running the code as defined
+- #### 基础句式：</br> Basic Syntax:
+```python
+def 函数名称name():
+    #运行代码 Code to run
+    print("hi")
+    return ("a")
+    #里面可以是 `for` 循环，条件判别，等等更复杂的代码，需要在同一个程序里多次运行，则会编为独立函数, Within the function, it could be a `for` loop, conditional testing, or much more complex code. If a sequence of code need to be ran several times throughout the programme, then it would be separated into a individual function.
+    #`return`用以表诉函数输出的值，可以用于储存在另外的自变量，用于接下来的代码
+```
+- #### 定式函数，即当输入参数为固定数量及种类时 </br> Fixed Function, functions that has a fixed number and types of argument as defined
+
+- #### 句式：</br> Syntax:
+```python
+def hello(name)
+    print("Hello! " + name)
+```
+- #### 这里 `hello()` 函数强制要求一个参数 </br> Here, `hello()` functions necessitates one input
+- #### 当运行 `hello("Bob")` 则会输出 `Hello! Bob` </br> When `hello("Bob") is ran, `Hello! Bob` is outputed
+- #### 若运行 `hello()` 或者 `hello("Bob","Ali")` 则将出现报错 </br> If `hello()` or `hello("Bob","Ali")` is ran instead, an error will be raised.
+- #### 未知函数数量 </br> Unknown argument counts
+  - ##### 当无法确定参数数量时，则能在函数定义里加入 `*args` 以星号表示未能确定参数数量，输入的参数将以列表形式进入函数进行处理 </br> When the number of arguments are unable to be confirmed, `*args` could be added into the definition to indicate the inability to confirm the number of arguments, as such those argument would be treated as a list in the function
+
+  - ##### 句式：</br> Syntax:
+```python
+def hello(*args)
+    for x in args:
+        print("Hello! "+ x)
+```
+  - ##### 若运行 `hello("Bob","Ali")` 将输出： </br> If `hello("Bob","Ali")` is ran, the output would be:
+`Hello! Bob`
+
+`Hello! Ali`
+- #### 键值对参数函数 </br> Function with key-value pair as input
+  - ##### 某些函数需要输入键值对作为运算参数，这也能在定义中提及参数的名称 </br> Let's say for certain function, multiple key-value pair is needed, the key could be mentioned in the definition and the code
+  - ##### 句式：</br> Syntax:
+```python
+def payment(principal,time,frequency,interest):
+    payment = principal/((1-(1+interest)**(time*frequency))/interest)
+    return payment
+```
+  - ##### 则可以运行 `payment(10000,10,3,0.05)` 或 `payment(principal=10000,time=10,frequence=3,interest=0.05)` 以作出相应算式</br> Then `payment(10000,10,3,0.05)` or `payment(principal=10000,time=10,frequence=3,interest=0.05)` could be ran to do the calculation
+- #### 未知参数键值对数量函数 Function with unknown number of key-value pair as inputs
+  - ##### 同上，若运行 `payment(10000)` 或 `payment(principal=10000)` 则将报错</br> Similarly, if `payment(10000)` 或 `payment(principal=10000)` is ran, an error will be raised
+  - #### 若想著名未知参数键值对数量，可用`**kwargs`，用双星号表示未知数量的键值对，这里不做示范，详细参考`*args`。 </br> If the number of keyword-value pair of input is undecided, `**kwargs` could be used to indicate. The syntax is similar as such of unknown number argument.
+
+- #### 递归函数 Recursion
+  - ##### 当函数自身在自身的定义中被提及，则称递归函数</br> When a function is ran or mentioned within the function definition itself, then it is a recursion.
+  - ##### 句式: </br> Syntax:
+```python
+def factorial(n):
+    if n==1:
+        return 1
+    elif n>1:
+        return n*factorial(n-1)
+```
+  - ##### 在使用递归函数时如不谨慎可导致无限循环，堆栈溢出等等问题，需格外注意。</br> When using recursion, the user should be careful, and have a stopping statement, for otherwise unending looping or stack overflow etc. could be caused.
+  
+- #### 朗达函数 Lambda Function
+  - ##### 朗达函数为一些简单的，不被命名的函数。只需要一行即可</br> A Lambda function is a function that is simple enough and unnamed. It would only takes one line.
+  - ##### 句式: </br> Syntax:
+```python
+cube_x = lambda x:x**3
+cube_x(3) #output 27
 ```
