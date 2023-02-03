@@ -81,7 +81,7 @@ listq #["a","b","x","y"]
   - ###### 词典 <br/> Dictionaries
     - 语句 <br/> syntax: `name = {"key":"value"}`
     - 数据以键值对的形式储存 <br/> The datas are stored in key-value pair
-    - 数据的内容可以透过对应的键值检索得到Values can be looked up by using the key value
+    - 数据的内容可以透过对应的键值检索得到 <br/> Values can be looked up by using the key value
   - ###### 元组 <br/> tuples 
     - 语句 <br/> syntax: `name=(object1,object2...)`
     - 数据永久也有序，不能被更改 <br/> The datas are permanent and ordered
