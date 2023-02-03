@@ -1,130 +1,240 @@
 # Programming
-#### Everything I know that you need or don't need to know for PRG1102
+#### 一切我知道的，你需要以及不需要知道的，关于PRG1102的知识 <br/> Everything I know that you need or don't need to know for PRG1102
 ---
 
-## Types of programming Language
-- #### Machine language
-  - ##### Directly executed by CPU
-  - ##### Customised for each architecture such as `x86` or `arm` etc.
-  - ##### `.bin` file
-- #### Assembly language
-  - ##### English like abbrieviations
-  - ##### Contains syntax for elementary operation and allow maximum control of the computer
-  - ##### Pointers and garbage management are crucial
-  - ##### `.exe` , `.dll` etc.
-- #### High-level language
-  - ##### Highly readable as compared with Machine language and Assembly language
-  - ##### Includes more syntax for much more complex action and control
-  - ##### Automated memory control but allow for manual instructing to minimize security flaws such as memory leaks
-  - ##### `R`, `Python`, `C++` etc.
+## 编译语言种类 <br/> Types of programming Language
+- #### 机器语言 <br/> Machine language
+  - ##### 由中央处理器直接运行 <br/> Directly executed by CPU
+  - ##### 为各个处理器架构（如`x86`,`arm`等）特别编译 <br/> Customised for each architecture such as `x86` or `arm` etc.
+  - ##### `.bin` 文件 <br/> `.bin` file
+- #### 汇编语言 <br/> Assembly language
+  - ##### 存在如同英语词汇般的简写 <br/> English like abbrieviations
+  - ##### 包含基础操作的句法，允许用户对电脑的最大化控制 <br/> Contains syntax for elementary operation and allow maximum control of the computer
+  - ##### 指针以及（记忆）垃圾处理是关键的 <br/> Pointers and garbage management are crucial
+  - ##### `.exe`,`.dll`等文件格式 <br/> `.exe` , `.dll` etc.
+- #### 高阶语言 <br/> High-level language
+  - ##### 相较于前两种语言更容易阅读 <br/> Highly readable as compared with Machine language and Assembly language
+  - ##### 包含更多更复杂的操作语句以及控制 <br/> Includes more syntax for much more complex action and control
+  - ##### 自动化繁琐的记忆规划但也允许自行编译以减少溢出攻击等安全漏洞 <br/> Automated memory control but allow for manual instructing to minimize security flaws such as memory leaks
+  - ##### `R`, `Python`, `C++` 等语言 <br/> `R`, `Python`, `C++` etc.
 ---
 
 ## Interpreting vs Compiling
-| Interpreting | Compiling |
+| Interpreting (可理解为口译) | Compiling 编译 |
 |:----------------:|:-------------:|
-|Translate line by line|Translate whole code and output result|
-|Require interpreter|Result can be used standalone|
-|Program is much more flexbile|Program is specified and require <br/> require docking if needed to be portable|
-|Program is usually slower|Program is usually faster|
+|逐句翻译 <br/> Translate line by line|整体翻译并汇总输出 <br/> Translate whole code and output result|
+|需要编译器才能运行 <br/> Require interpreter|程序能独立运行 <br/> Result can be used standalone|
+|程序更容易使用 <br/> Programme is much more flexbile|程序属于高客制化，需要根据环境对程序做出相应变化 <br/> Programme is specified and require <br/> require porting if needed to be portable|
+|程序运行更快 <br/> Programme is usually slower|程序运行相对缓慢 <br/> Programme is usually faster|
 |python 3.10|py2exe|
 
-## Code Organisation
-- #### Code needs to be organised so maintainance and update can be done
-- #### Moduling
-  - ##### Module is a piece of code that can be run independently
-  - ##### Module can be imported to be used in a program and is reusable
-- #### Project
-  - ##### A project contains all the file under the same programme
-  - ##### When a programme gets large, it is usually better to separate into different files and cross refer to better debug and maintain
-  - ##### IDE(`Integrated Development Environment`)s are usually used when working with projects
-  - ##### python IDE and VSCode are examples of commonly used IDEs
-- #### Package Manager
-  - ##### A package manager can be thought of as a store of library of codes that are useful and general.
-  - ##### With a package manager, packages and libraries can be imported and managed efficiently.
-  - ##### `PIP`(python) and `node.js`(JavaScript) are examples of Package manager.
-- #### namespace
-  - ###### Namespacing is crucial to avoid name clashes causing the programme to fail
-  - ###### In python, namespaces are defined by the indiviual modules.
-  - ###### It is also commonnly seen to have a line of `namespace std` at the start of a `C++` programme indicating the default namespace in the programme
+## Code Organisation 编码组织
+- #### 代码必须有序以方便后续的维修以及更新工作 <br/> Code needs to be organised so maintainance and update can be done
+- #### 模块 <br/> Module
+  - ##### 模块可视为一组可单独运行的代码 <br/> Module is a piece of code that can be run independently
+  - ##### 程序中可以引入模块，模块是可以重复使用的 <br/> Module can be imported to be used in a program and is reusable
+- #### 工程 <br/> Project 
+  - ##### 一个工程中包含了同一个程序中所需的所有文件以及代码 <br/> A project contains all the file under the same programme
+  - ##### 当程序逐渐复杂化，将代码分组互相引入将有助与维修以及排错 <br/> When a programme gets large, it is usually better to separate into different files and cross refer to better debug and maintain
+  - ##### 在开发大规模工程时经常会使用各种集成开发环境(IDE) <br/> IDE(`Integrated Development Environment`)s are usually used when working with projects
+  - ##### 常见的 IDE 有python IDE 以及 VSCode <br/> python IDE and VSCode are examples of commonly used IDEs
+- #### 包管理器 <br/> Package Manager 
+  - ##### 一个包管理器就如同一个有着许多好用的代码的商店 <br/> A package manager can be thought of as a store of library of codes that are useful and general.
+  - ##### 有了包装管理器，我们可以有效的引用以及管理程序中的包等现有代码 <br/> With a package manager, packages and libraries can be imported and managed efficiently.
+  - ##### 常见的包管理器有 `PIP`(python) 以及 `node.js`(JavaScript) <br/> `PIP`(python) and `node.js`(JavaScript) are examples of Package manager.
+- #### 命名空间 <br/> namespace 
+  - ###### 命名格式化在避免撞名引起的程序溃败里至关重要 <br/> Namespacing is crucial to avoid name clashes causing the programme to fail
+  - ###### 在 `Python` 中，命名空间由各个组成空间各自定义 <br/> In python, namespaces are defined by the indiviual modules.
+  - ###### 在`C++`语言中常见一条 `namespace std::`，这有助与节省代码，把 `std::cout` 以及 `std::cin` 等价代换成 `cout` 以及 `cin` <br/> It is also commonnly seen to have a line of `namespace std::` at the start of a `C++` programme indicating the default namespace in the programme
     - In `C++` the syntax looks like `std::cout` and `std::cin` and utilising the namespace setting the syntax can be shorten into `cout<< text` and etc.
 ---
-## Data Types
-- #### A variable can be defined as `name = value` in python and other dynamically typed language
-- #### For a static typed language such as `C++` the types need to be declared initally such as `int a = 1`
-- #### There are many data types and some languages might have some that other languages doesn't include
-- #### Here are some examples in python:
-  - ###### integer (Whole number integer, 32bit, from -2 billion to 2 billion)
-  - ###### double (for precise decimal as they allocate the most memory for single variable
-  - ###### float (for decimal but the decimal point is floating, hence the name, and part of the memory is used to store the location of the point)
-  - ###### boolean (`true` or `false`, as a result of logical comparison)
-  - ###### list 
-    - syntax: []
-    - used to store a number of datas together like a collection
-    - index starts at 0
-    - The sequence of data matters
-  - ###### Dictionaries
-    - syntax: `name = {"key":"value"}`
-    - The datas are stored in key-value pair
-    - Values can be looked up by using the key value
-  - ###### tuples
-    - syntax: `name=(object1,object2...)'
-    - The datas are permanent and ordered
-    - Allow duplicate value
-  - ###### Sets
-    - syntax: `name={object1,object2...}`
-    - The datas are changable
-    - Doesn't allow duplicate value
-  - ###### Note that there are a lot of other data types out there such as pointers that are certainly useful in advanced use case by we will not be learning it for now.
+## Data Types 数据类型
+- #### 一个动态语言里的自变量可以用`名字=数值`的方式来定义 <br/> A variable can be defined as `name = value` in python and other dynamically typed language
+- #### 静态语言（C++等）里的自变量需要先被定义，比如 `int 名字 = 1`, int 代表`整数类` <br/> For a static typed language such as `C++` the types need to be declared initally such as `int a = 1`
+- #### 每个编译语言中含有的数据类型各不相同 <br/> There are many data types and some languages might have some that other languages doesn't include
+- #### Python中有的数据类型如下：<br/>Here are some examples in python:
+  - ###### 整数类（允许从负二十亿到正二十亿的数值）<br/> integer (Whole number integer, 32bit, from -2 billion to 2 billion)
+  - ###### 浮点类（允许小数点，但小数点的具体位置作为一个自变量暂居其中的一小部分储存空间，因其小数点能“漂浮”故称浮点）<br/> float (for decimal but the decimal point is floating, hence the name, and part of the memory is used to store the location of the point)
+  - ###### 布尔值（只有`真`以及`假`两种数据，通常作为逻辑运算的结果）<br/> boolean (`true` or `false`, as a result of logical comparison)
+  - ###### 列表 <br/> list 
+    - 语句 <br/> syntax: []
+    - 用于储存多个数据在一个合集中 <br/> used to store a number of datas together like a collection
+    - 编号由0开始<br/> index starts at 0
+    - 次序有别 <br/> The sequence of data matters
+  - ###### 词典 <br/> Dictionaries
+    - 语句 <br/> syntax: `name = {"key":"value"}`
+    - 数据以键值对的形式储存 <br/> The datas are stored in key-value pair
+    - 数据的内容可以透过对应的键值检索得到Values can be looked up by using the key value
+  - ###### 元组 <br/> tuples 
+    - 语句 <br/> syntax: `name=(object1,object2...)`
+    - 数据永久也有序，不能被更改 <br/> The datas are permanent and ordered
+    - 允许重复的内容 <br/> Allow duplicate value
+  - ###### 合集 <br/> Sets
+    - 语句 <br/> syntax: `name={object1,object2...}`
+    - 数据可更动 <br/> The datas are changable
+    - 不允许重复的内容 <br/> Doesn't allow duplicate value
+  - ###### 注意有许多数据类型时这里没有提及的，比如指针。这些在更复杂的情况下必然有用，比如双指针哈希表等等，但是在这里我们不需要也不会学到。<br/> Note that there are a lot of other data types out there such as pointers that are certainly useful in advanced use case by we will not be learning it for now.
 ---
 
-## Syntax
-- #### Syntax is a set of rules defining how the code should be written
-- #### Syntax can be thought of as the grammar of a certain programming language
-- #### There are some keyword that are reserved as a part of the syntax
-  - ##### some of the examples include: `if`, `elif`, `else`, `while`, `for` and more for python
-- #### Numerical operator are also reserved for logical and numerical operation.
-- #### Some operator can be used for different purposed depending on the input
-- #### For context of some of the operator mentioned below, we will assume `a=true` and `b=false`
-|Operator|Description|Example|Output|
+## 语法 <br/> Syntax
+- #### 语法规定一个编码语言里的代码该如何编写 <br/> Syntax can be thought of as the grammar of a certain programming language
+- #### 有一些关键字被预留作为语法里的一部分 <br/> There are some keyword that are reserved as a part of the syntax
+  - ##### Python 预留关键字包括：`if`, `elif`, `else`, `while`, `for` <br/> some of the examples include: `if`, `elif`, `else`, `while`, `for` and more for python
+- #### 数学运算符号也被预留作为逻辑运算以及数学运算的符号 <br/> Numerical operator are also reserved for logical and numerical operation.
+- #### 根据输入的内容种类，有些符号具有多个用途 <br/> Some operator can be used for different purposed depending on the input
+- #### 为了下表理解，假设`a=真` and `b=假` <br/> For context of some of the operator mentioned below, we will assume `a=true` and `b=false`
+|符号 <br/> Operator|描述<br/> Description|举例<br/>Example|输出<br/>Output|
 |:---:|:---:|:---:|:---:|
-|`+`|Addition|1+2|3|
-|`-`|Subtraction|1-2|-1|
-|`*`|Multiplication|8\*7|56|
-|`/`|Division|8/3|2.3333|
-|`%`|Modulo/Remainder|8%3|2|
-|`**`|Power|2**3|8|
-|`==`|Is equal to|2==3|`false`|
-|`!=`|Is not equatl to |2!=3|`true`|
-|`<`|Less than|2<2|`false`|
-|`<=`|Less than or equal to|2<=2|`true`|
-|`>`|More than|2>2|`false`|
-|`>=`|More than or equal to|2>=2|`true`|
-|`&&`|AND|a&&b|`false`|
-|`\|\|`|OR|a\|\|b|`true`|
-|`!`|NOT| !a|`false`|
-- #### Note that `<` and `>` can also be used to manipulate binary datas
+|`+`|加法</br>Addition|1+2|3|
+|`-`|减法</br>Subtraction|1-2|-1|
+|`*`|乘法</br>Multiplication|8\*7|56|
+|`/`|除法</br>Division|8/3|2.3333|
+|`%`|取余</br>Modulo/Remainder|8%3|2|
+|`**`|次方</br>Power|2**3|8|
+|`==`|等同</br>Is equal to|2==3|`false`|
+|`!=`|不同</br>Is not equal to |2!=3|`true`|
+|`<`|少于</br>Less than|2<2|`false`|
+|`<=`|少于或等于</br>Less than or equal to|2<=2|`true`|
+|`>`|大于</br>More than|2>2|`false`|
+|`>=`|大于或等于</br>More than or equal to|2>=2|`true`|
+|`&&`|与门</br>AND|a&&b|`false`|
+|`\|\|`|或门</br>OR|a\|\|b|`true`|
+|`!`|非门</br>NOT| !a|`false`|
+- #### 注意`<`以及`>`也可被用于改变二进制数据 </br>Note that `<` and `>` can also be used to manipulate binary datas
 ---
 
-## Working with Numbers
-- #### Numbers can be manipulated with some of the operator as mention in syntax part
-- #### When numbers are in counter, it can be incremented and decremented such as when in a loop.
+## 数字的运作</br> Working with Numbers
+- #### 如同上诉表明，数学符号可以用于改变数字的值</br>Numbers can be manipulated with some of the operator as mention in syntax part
+- #### 当一个数字作为计数使用时（如在循环里），增量以及减量可以如下实施 <br/> When numbers are in counter, it can be incremented and decremented such as when in a loop.
   - ##### `a++`
   - ##### `a--`
-- #### When working with arithmetic, the sequence is the same as when inputed into a calculator
+- #### 当输入四则运算时，把算式如同输入计算机般输入程序，代换符号即可 <br/> When working with arithmetic, the sequence is the same as when inputed into a calculator
 ---
 
-## Working with String
-- #### String Concatenation
-  - ##### `"ali"+"abu"` gives `"aliabu"`
-- #### Splitting String
-  - ##### `"ali".split()` gives a list `["a","l","i"]`
-- #### Substring
-  - ##### Equivalent to firsting splitting a string then concatenating the selected element
-  - ##### `ali.substring(1)` gives `"li"` (note that the sequence of index always start in 0 in python)
-- #### Case Conversion
+## 字符串的运作 </br> Working with String
+- #### 字符串的结合 </br> String Concatenation
+  - ##### `"ali"+"abu"` 生成 `"aliabu"`</br>`"ali"+"abu"` gives `"aliabu"`
+- #### 分裂字符串 </br> Splitting String
+  - ##### `"ali".split()`生成列表`["a","l","i"]`</br>`"ali".split()` gives a list `["a","l","i"]`
+- #### 字字符串 </br> Substring
+  - ##### 等同于先分裂，后将所需的字符结合成新的字符串 </br> Equivalent to firsting splitting a string then concatenating the selected element
+  - ##### `aliabu.substring(1,2)`生成`"li"`(注意python中的元素编号永远从0开始，即第一个"a"为0)</br>`aliabu.substring(1,2)` gives `"li"` (note that the sequence of index always start in 0 in python)
+- #### 大小写转换 </br> Case Conversion
   - ##### `.lower()`
   - ##### `.upper()`
-- #### f-String
-  - ##### Used when part of the string/ text to be printed is refered to another variable or need additional process
-  - ##### `print(f'one plus one is equal to {1+1}')` will gives `one plus one is equal to 2`
-  - ##### Variable can be referred in the curly braces {} for the output to refer.
+- #### 格式化字符串 </br> f-String
+  - ##### 可以在需要输出的字符串中需要引用其他自变量值或额外处理时使用 </br>Used when part of the string/ text to be printed is refered to another variable or need additional process
+  - ##### `print(f'one plus one is equal to {1+1}')`将输出`one plus one is equal to 2`</br> `print(f'one plus one is equal to {1+1}')` will gives `one plus one is equal to 2`
+  - ##### 自变量的数值可以在{}中被提及一遍输出检索 </br> Variable can be referred in the curly braces {} for the output to refer.
+- #### 字符串的长度 </br> Length of string
+  - ##### `len("aliabu")` 生成 `6` </br> len("aliabu")` gives `6`
+---
+
+## 程序架构/控制架构 </br> Control Structure
+- #### 次序化架构 </br> Sequential Flow
+  - ##### 如同食谱中一步一步教学的结构的代码 </br> The code is structured as such of a cookbook
+```python
+a = 1
+b = 2
+print(a+b)
+```
+- #### 输出 </br> Output:
+```
+3
+```
+- #### 条件化架构 </br> Conditional Flow
+  - ##### 根据条件产出的布尔值决定下一步运行的代码 </br> The code to run will be decided by the condition met
+  - ##### `elif` 为 `else if` 的缩写，两者之间可互相交换 </br> `elif` is the short form of `else if`, both are interchangable with each other
+```python
+a = "coconut"
+b = "apple"
+if len(a) == len(b):
+    print("a 以及 b 长度相同")
+elif len(a) < len(b):
+    print("a 比 b 短")
+else: 
+    print("b 比 a 短")
+```
+- #### 输出 </br> Output:
+```
+b 比 a 短
+```
+
+- #### 重复性架构 </br> Iteration Flow
+  - ##### 在给定条件下不断重复一段代码直至达成截断条件，或是重复给定次数 </br> The code to run will be decided by the condition met
+```python
+for x in range(4):
+    print(x)
+```
+- #### 输出 </br> Output:
+```
+0
+1
+2
+3
+```
+  - ##### 阶段条件形重复性架构
+```python
+x = 3
+while x<10:
+    print(x)
+    x++
+```
+- #### 输出 </br> Output:
+```
+3
+4
+5
+6
+7
+8
+9
+```
+
+- #### `range()` 是一个在循环中以及各种条件检测中常见的代码，对它的了解有助于更好的控制循环以及次数</br> `range()` is a especially common function in terms of looping and condition checking, understanding it would help in controlling the flow and iteration and such drastically.
+- #### `range()` 的输入参数有`start`,`end`,`step`, 句式为`range(start,end,step)`</br>`range()` has parameters of `start`,`end`,`step`
+  - ##### `start` 标记起始数字</br> `start` indicates the starting number
+  - ##### `end` 标记结束数字或顶值（函数将输出一切小于`end`的`start` + n* `step`，其中n为整数的的数字并包装成列表）</br> `end` indicates the ending number or the ceiling value (Such that the funciton would output all the numbers that fulfill the form of `start` + n*`step` while whole number n that is smaller than `end` into a list)
+  - ##### `step` 标记数字间的间隔 </br>`step` indicates the step between all the iterated numbers.
+- 代码：</br> code: 
+```python
+for x in range(1,14,3):
+    print(x)
+```
+- 输出</br>output:
+```
+1
+4
+7
+10
+13
+```
+
+- 代码：</br> code: 
+```python
+for x in range(1,5):
+    print(x)
+```
+- 输出</br>output:
+```
+1
+2
+3
+4
+```
+
+
+- 代码：</br> code: 
+```python
+for x in range(7):
+    print(x)
+```
+- 输出</br>output:
+```
+1
+2
+3
+4
+5
+6
+```
