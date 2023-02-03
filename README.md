@@ -1,5 +1,6 @@
 # Programming
 #### 一切我知道的，你需要以及不需要知道的，关于PRG1102的知识 <br/> Everything I know that you need or don't need to know for PRG1102
+#### 临时抱佛脚请参考 https://www.youtube.com/watch?v=kqtD5dpn9C8 <br/> For last minute study, please refer to https://www.youtube.com/watch?v=kqtD5dpn9C8
 ---
 
 ## 编译语言种类 <br/> Types of programming Language
