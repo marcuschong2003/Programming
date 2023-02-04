@@ -420,7 +420,7 @@ outfile.write("HI")
 2
 ```
 - #### 每当我们执行一次 `write()` 都会输出文件中当前文本的长度</br> Everytime we run `write()`, the updated length of text within the file is outputed.
-- #### 无论是读还是写写，在执行完成后，都需要关闭文件：</br> Regardless of reading or writing is done, after the execution, the file should be closed:
+- #### 无论是读还是写，在执行完成后，都需要关闭文件：</br> Regardless of reading or writing is done, after the execution, the file should be closed:
 ```python
 infile.close()
 outfile.close()
