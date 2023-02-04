@@ -44,19 +44,19 @@
   - ##### 有了包装管理器，我们可以有效的引用以及管理程序中的包等现有代码 <br/> With a package manager, packages and libraries can be imported and managed efficiently.
   - ##### 常见的包管理器有 `PIP`(python) 以及 `node.js`(JavaScript) <br/> `PIP`(python) and `node.js`(JavaScript) are examples of Package manager.
 - #### 命名空间 <br/> namespace 
-  - ###### 命名格式化在避免撞名引起的程序溃败里至关重要 <br/> Namespacing is crucial to avoid name clashes causing the programme to fail
-  - ###### 在 `Python` 中，命名空间由各个组成空间各自定义 <br/> In python, namespaces are defined by the indiviual modules.
-  - ###### 在`C++`语言中常见一条 `namespace std::`，这有助与节省代码，把 `std::cout` 以及 `std::cin` 等价代换成 `cout` 以及 `cin` <br/> It is also commonnly seen to have a line of `namespace std::` at the start of a `C++` programme indicating the default namespace in the programme. In `C++` the syntax looks like `std::cout` and `std::cin` and utilising the namespace setting the syntax can be shorten into `cout<< text` and etc.
+  - ##### 命名格式化在避免撞名引起的程序溃败里至关重要 <br/> Namespacing is crucial to avoid name clashes causing the programme to fail
+  - ##### 在 `Python` 中，命名空间由各个组成空间各自定义 <br/> In python, namespaces are defined by the indiviual modules.
+  - ##### 在`C++`语言中常见一条 `namespace std::`，这有助与节省代码，把 `std::cout` 以及 `std::cin` 等价代换成 `cout` 以及 `cin` <br/> It is also commonnly seen to have a line of `namespace std::` at the start of a `C++` programme indicating the default namespace in the programme. In `C++` the syntax looks like `std::cout` and `std::cin` and utilising the namespace setting the syntax can be shorten into `cout<< text` and etc.
 ---
 ## Data Types 数据类型
 - #### 一个动态语言里的自变量可以用`名字=数值`的方式来定义 <br/> A variable can be defined as `name = value` in python and other dynamically typed language
 - #### 静态语言（C++等）里的自变量需要先被定义，比如 `int 名字 = 1`, int 代表`整数类` <br/> For a static typed language such as `C++` the types need to be declared initally such as `int a = 1`
 - #### 每个编译语言中含有的数据类型各不相同 <br/> There are many data types and some languages might have some that other languages doesn't include
 - #### Python中有的数据类型如下：<br/>Here are some examples in python:
-  - ###### 整数类（允许从负二十亿到正二十亿的数值）<br/> integer (Whole number integer, 32bit, from -2 billion to 2 billion)
-  - ###### 浮点类（允许小数点，但小数点的具体位置作为一个自变量暂居其中的一小部分储存空间，因其小数点能“漂浮”故称浮点）<br/> float (for decimal but the decimal point is floating, hence the name, and part of the memory is used to store the location of the point)
-  - ###### 布尔值（只有`真`以及`假`两种数据，通常作为逻辑运算的结果）<br/> boolean (`true` or `false`, as a result of logical comparison)
-  - ###### 列表 <br/> list 
+  - ##### 整数类（允许从负二十亿到正二十亿的数值）<br/> integer (Whole number integer, 32bit, from -2 billion to 2 billion)
+  - ##### 浮点类（允许小数点，但小数点的具体位置作为一个自变量暂居其中的一小部分储存空间，因其小数点能“漂浮”故称浮点）<br/> float (for decimal but the decimal point is floating, hence the name, and part of the memory is used to store the location of the point)
+  - ##### 布尔值（只有`真`以及`假`两种数据，通常作为逻辑运算的结果）<br/> boolean (`true` or `false`, as a result of logical comparison)
+  - ##### 列表 <br/> list 
     - 语句 <br/> syntax: []
     - 用于储存多个数据在一个合集中 <br/> used to store a number of datas together like a collection
     - 编号由0开始<br/> index starts at 0
@@ -77,19 +77,19 @@ listq #["a","b","c","x","y"]
 listq.pop(2)
 listq #["a","b","x","y"]
 ```
-  - ###### 词典 <br/> Dictionaries
+  - ##### 词典 <br/> Dictionaries
     - 语句 <br/> syntax: `name = {"key":"value"}`
     - 数据以键值对的形式储存 <br/> The datas are stored in key-value pair
     - 数据的内容可以透过对应的键值检索得到 <br/> Values can be looked up by using the key value
-  - ###### 元组 <br/> tuples 
+  - ##### 元组 <br/> tuples 
     - 语句 <br/> syntax: `name=(object1,object2...)`
     - 数据永久也有序，不能被更改 <br/> The datas are permanent and ordered
     - 允许重复的内容 <br/> Allow duplicate value
-  - ###### 合集 <br/> Sets
+  - ##### 合集 <br/> Sets
     - 语句 <br/> syntax: `name={object1,object2...}`
     - 数据可更动 <br/> The datas are changable
     - 不允许重复的内容 <br/> Doesn't allow duplicate value
-  - ###### 注意有许多数据类型时这里没有提及的，比如指针。这些在更复杂的情况下必然有用，比如双指针哈希表等等，但是在这里我们不需要也不会学到。<br/> Note that there are a lot of other data types out there such as pointers that are certainly useful in advanced use case by we will not be learning it for now.
+  - ##### 注意有许多数据类型时这里没有提及的，比如指针。这些在更复杂的情况下必然有用，比如双指针哈希表等等，但是在这里我们不需要也不会学到。<br/> Note that there are a lot of other data types out there such as pointers that are certainly useful in advanced use case by we will not be learning it for now.
 ---
 
 ## 语法 <br/> Syntax
