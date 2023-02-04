@@ -189,7 +189,7 @@ for x in range(4):
 2
 3
 ```
-  - ##### 阶段条件形重复性架构
+  - ##### 截断条件形重复性架构 </br> Breaking conditional iterational structure
 ```python
 x = 3
 while x<10:
