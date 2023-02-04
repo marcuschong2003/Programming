@@ -12,12 +12,12 @@
   - ##### 存在如同英语词汇般的简写 <br/> English like abbrieviations
   - ##### 包含基础操作的句法，允许用户对电脑的最大化控制 <br/> Contains syntax for elementary operation and allow maximum control of the computer
   - ##### 指针以及（记忆）垃圾处理是关键的 <br/> Pointers and garbage management are crucial
-  - ##### `.exe`,`.dll`等文件格式 <br/> `.exe` , `.dll` etc.
+  - ##### `.exe`,`.dll`等文件格式以及`C++`等语言 <br/> `.exe` , `.dll` file and `C++` language etc.
 - #### 高阶语言 <br/> High-level language
   - ##### 相较于前两种语言更容易阅读 <br/> Highly readable as compared with Machine language and Assembly language
   - ##### 包含更多更复杂的操作语句以及控制 <br/> Includes more syntax for much more complex action and control
   - ##### 自动化繁琐的记忆规划但也允许自行编译以减少溢出攻击等安全漏洞 <br/> Automated memory control but allow for manual instructing to minimize security flaws such as memory leaks
-  - ##### `R`, `Python`, `C++` 等语言 <br/> `R`, `Python`, `C++` etc.
+  - ##### `R`, `Python`, `C++` 等语言 <br/> `R`, `Python` etc.
 ---
 
 ## Interpreting vs Compiling
@@ -56,6 +56,14 @@
   - ##### 整数类（允许从负二十亿到正二十亿的数值）<br/> integer (Whole number integer, 32bit, from -2 billion to 2 billion)
   - ##### 浮点类（允许小数点，但小数点的具体位置作为一个自变量暂居其中的一小部分储存空间，因其小数点能“漂浮”故称浮点）<br/> float (for decimal but the decimal point is floating, hence the name, and part of the memory is used to store the location of the point)
   - ##### 布尔值（只有`真`以及`假`两种数据，通常作为逻辑运算的结果）<br/> boolean (`true` or `false`, as a result of logical comparison)
+  - ##### 字符串（在早期的变成语言中字符只能单独储存，字句只能以一连串的字符并排储存，故称字符串）</br> String (In early stages of programming, `char` only can hold 1 character and thus words and sentences are assigned as a string of `char` thus the name `string`)
+    - ###### 通常用户输入会先被储存成一个字符串，在进行后续处理 </br> A user input is usually saved as a string and will be further processed for further usage
+    - 语句 <br/> syntax:
+``` python
+input = input("Please type any integer number:")
+```
+  - ###### `input(提示句)`表示让程序输出`提示句`，读取用户输入，并储存在相应的自变量中 </br> `input(hints)` indicates the programme to print the `hints` sentences then read the input from user and save it to the predetermined variable
+  - ###### `\n` 表示新一行 </br> `\n` indicates a new line to be started
   - ##### 列表 <br/> list 
     - 语句 <br/> syntax: []
     - 用于储存多个数据在一个合集中 <br/> used to store a number of datas together like a collection
@@ -321,4 +329,99 @@ def factorial(n):
 ```python
 cube_x = lambda x:x**3
 cube_x(3) #output 27
+```
+---
+
+## 档案处理 </br> File Processing
+- #### 在许多真实用到的程序中，运行中所需的资讯需要长时间被储存，而非在程序关闭时即删除，例如登录户口，近期文件等等。而这些资料可以透过多种方式储存，例如放上伺服器，或是更简单的就是放在一个文档里，下次打开再载入。</br> In real world application, some of the information in runtime need to be saved for a long time, instead of being deleted right after the programme is terminanted, such as user-auth, recent files etc. These information could be saved with many ways, such as uploading to a server, or simply writing to a text file.
+- #### 本质上，这与一个程序运行时定义的自变量等同，不过于此需要延长时效性，或是记录长时间的变化，让程序不会每次都格式化。 </br> This is technically similar to the variable defined and allocated at the runtime, but as the data need to be hold for longer time, to record the change etc. so that the programme would not be formatted if needed.
+- #### 文件系统/层级系统 </br> File System 
+  - ##### 文件系统为电脑文件的分级规划系统，等同于不断包裹的文件夹。若要寻找到某个文件对其进行阅读或编写工作，则需要知道其与程序的位置。 </br> File system is the system of organising file in the computer, as if there's many folders holding folders etc. If we would like to read or write to a file, the specific location of the target file is needed.
+  - ##### 母文件通常的地址为 `/` 或是 Windows 的 `C:/` 等，于此可以透过不断穿梭子文件直到找到文件所在。 </br> The root directory is usually located as `/` or as those in Windows `C:/` , the location of the file can then be located through the subfolders.
+  - ##### 一个有效的的（绝对）文件地址如：`C:\Program Files\Adobe\Adobe InDesign 2021.exe` </br> An effective (absolute) file diretory looks like `C:\Program Files\Adobe\Adobe InDesign 2021`
+  - ##### 在程序中通常不需要用到绝对文件地址，除非是跨文件夹更动，这里只需要相对文件夹地址。 </br> In a programme, an absolute file directory is usually overpowered, and relative file directory would usually be sufficient.
+  - ##### 在相对文件地址中，一切以程序母档案的地址为起始点，若是比程序更深一层（如在和程序同层中的`A`文件夹中的`text.txt`），则可以写 `A/text.txt`，若是在上一层（若觉得饶可以参考上诉地址，并想象在`Adobe`里要去到`Program Files`的文件夹，则写作`../`,以双点作为返回一层的表示）</br> In relative file directory, everything starts at the source file of the programme, if the file to locate is deeper into the folders, e.g. a `text.txt` located within folder `A` at the same level, then the directory is as `A/text.txt`. If the target file is a one layer before the source file of the programme, such as locating `Program Files` from `Adobe` with the direction mentioned above, then the directory write as `../`, meaning to locate the parent directory.
+- #### 在知道了文件的地址后，我们就能够在程序中对其做出阅读以及编写的工作。 </br> After knowing the directory of a file, we can now read and write to the file.
+- #### Python 内建函数 `open()` 让我们能够打开文件并修改过阅读文件内的内容。 </br> The built-in function `open()` allows us to open the file then read or write to the file.
+- #### `open()` 函数需要两个参数，一为文件的相对地址，二位打开模式。 </br> `open()` functioon requires 2 parameters, first is the directory, and second is the mode of access.
+- ####  `open()` 的打开模式被默认为 `rt`，其中 `r` 表示阅读（不含编写），`t` 表示文本。其他的参数可以参考如下： </br> `open()` has a default paramter of `rt`, with `r` indicating reading mode, `t` indicating text mode. Other paramter are as listed.
+|标记/参数 </br> flag/parameter| 意义 </br> meaning|
+|:---:|:---:|
+|`r`|阅读</br> Reading|
+|`w`|编写</br> Writing|
+|`a`|增加</br> Appending|
+|`r+`|同时阅读与编写</br> Reading and Writing|
+|`t`|文本模式</br> Text mode|
+|`b`|二进制模式 </br> Binary mode|
+
+- #### 其中`r`，`w`，`a`，`r+`之间四选一，`t`和`b`之间二选一，共八种组合。</br> In that, one from  `r`,`w`,`a`,`r+` would be chosen, with one from `b` and `t` being chosen, totalling at eight total combination
+- #### 假设`text.txt`内容如下：</br> Assume that the content of `text.txt` is as below:
+```
+Thou shall never leave my mind
+
+For I loved you
+
+Then, and since then
+```
+```python
+infile = open(text.txt,`rt`)
+```
+
+- #### 此时，我们可以对`text.txt`进行查阅 </br> Now, we can read `text.txt`
+```python
+infile.read(1)
+```
+输出：</br> Output:
+```
+T
+```
+- #### 然后执行：</br> Then we run:
+```python
+infile.read(5)
+```
+输出：</br> Output:
+```
+hou s
+```
+- #### 以此类推，括号里的数字是多少，便会输出多少个之前未读到的字符 </br> And so on, with the number in the brackets as the number of unread character from the string being outputed.
+- #### 若括号内没有注明数字则阅读至本行结束，即：</br> If there's no number in the brackets, then the remaining char from the whole line would be outputed.
+```python
+infile.read()
+```
+输出：</br> Output:
+```
+hall never leave my mind\n
+```
+
+- #### 此时执行:</br> Now, we run:
+```python
+infile.readline()
+```
+
+输出：</br> Output:
+```
+\nFor I loved you\n
+```
+
+- #### 顾名思义`readline()`将读取一整行文字，直到`\n`因其表示新一行的开始</br> As the name implies, `readline()` will read the whole line and output it, until it reaches `\n` indicating the start of a new line.
+
+- #### 设`test.txt`为一个空的文件 </br> Assume that `test.txt` is an empty text file
+- #### 此时执行:</br> Now, we run:
+```python
+outfile = open(test.txt,`wt`)
+```
+
+- #### 则: </br> Then:
+```python
+outfile.write("HI")
+```
+输出：</br> Output:
+```
+2
+```
+- #### 每当我们执行一次 `write()` 都会输出文件中当前文本的长度</br> Everytime we run `write()`, the updated length of text within the file is outputed.
+- #### 无论是读还是写写，在执行完成后，都需要关闭文件：</br> Regardless of reading or writing is done, after the execution, the file should be closed:
+```python
+infile.close()
+outfile.close()
 ```
