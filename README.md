@@ -143,7 +143,7 @@ listq #["a","b","x","y"]
   - ##### `print(f'one plus one is equal to {1+1}')`将输出`one plus one is equal to 2`</br> `print(f'one plus one is equal to {1+1}')` will gives `one plus one is equal to 2`
   - ##### 自变量的数值可以在{}中被提及一遍输出检索 </br> Variable can be referred in the curly braces {} for the output to refer.
 - #### 字符串的长度 </br> Length of string
-  - ##### `len("aliabu")` 生成 `6` </br> len("aliabu")` gives `6`
+  - ##### `len("aliabu")` 生成 `6` </br> `len("aliabu")` gives `6`
 ---
 
 ## 程序架构/控制架构 </br> Control Structure
