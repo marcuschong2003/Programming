@@ -183,7 +183,37 @@ else:
 ```
 b 比 a 短
 ```
-
+  - ##### `match case` 或其他语言里更常见的 `switch case` 可以用作对单个对象进行多次匹配，并根据结果执行相应的代码的关键字 </br> The `match case` or more commonly seen `switch case` could be used to repeatedly match a target with multiple possible outcome, and operating accordingly.
+```python
+a = "coconut"
+match a:
+    case "coconut":
+        print("This is a coconut")
+    case "apple": 
+        print("This is an apple")
+    case _:
+        print("This is some other fruit")
+```
+- #### 输出 </br> Output:
+```
+This is a coconut
+```
+  - ##### 当条件（`a`）不与下列的任何 `case` 匹配，则自动执行 `case _:` 下的指令 </br> When the condition `a` is not matched with any of the `case` stated, the code under `case _:` will be ran
+```python
+a = "banana"
+match a:
+    case "coconut":
+        print("This is a coconut")
+    case "apple": 
+        print("This is an apple")
+    case _:
+        print("This is some other fruit")
+```
+- #### 输出 </br> Output:
+```
+This is a some other fruit
+```
+  - ##### 在其他语言里更为常见的形式是 `switch case` 只需要把这里的 `match` 替代成 `switch` 即可。</br> It is more commonly seen in the form of `switch case`, by replacing `match` with `switch`, the mechanism is identical
 - #### 重复性架构 </br> Iteration Flow
   - ##### 在给定条件下不断重复一段代码直至达成截断条件，或是重复给定次数 </br> The code to run will be decided by the condition met
 ```python
